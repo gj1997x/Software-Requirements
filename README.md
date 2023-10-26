@@ -73,4 +73,12 @@ Supplier:
 6. The system system should be easily deployable with low downtimes during updates or changes. 
 8. The system shall ensure that all transactions made are accurate and there will be no data corruption. 
 9. The system shall integrate with other systems such as the shipping or logistic systems. 
-10. The system shall be capable of recovering from any system failure. 
+10. The system shall be capable of recovering from any system failure.
+
+### Explaination:
+
+#### Usecase Diagram:
+
+<img width="742" alt="Use Case Diagram" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/072ad39e-147c-41ad-a653-cb7bd4f56fc3">
+
+The purpose of usecase diagrams is to shows a highlevel overview of the usecases, actors and their interactions within the system. In the image above it can be clearly seen that the actors within the system are Customer/LoyaltyMember, Cashier, Store Manager, Supplier and all of these actors belong to User. Each actor have specific functions that can perform depending on their role in the system. There are in total 22 usescases in the system which each usecase provide a function in the Electronic store 111 system. Each actor is associated with a specific
