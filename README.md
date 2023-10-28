@@ -109,3 +109,10 @@ This specific sequence diagram represents several interactions occuring in the o
 ##### 4. Supplier:
 In this diagram it can clearly be seen that it includes two operations occuring in a specific order. The first operation will be processStoreOrder() that will take three parameters which are orderID, productID, quantity. This will allow the system to know that the supplier has recieved and now processing the requested order. The second operation is called provideDeliveryInfo() which will take three parameters from the supplier. Those parameters are the order details such as orderID, date expected and wareHouseID which then can be used to update the order status.
 
+#### Conceptual Class Diagram:
+This diagram is a structure diagramthat represents a high level view of of the conceptual structure of the system. Its purpose is to help in domain understanding such that stakeholders and developers understand the main concepts of the domain and how these concepts are related to each other. Conceptual class diagram also frames the problem such that stakeholders can see the main elements involved. This type of diagram mainly focuses on illustrating key classes, and their relationships.
+Elements in Conceptual Class DIagram:
+1. key Entities: the primary elements in the domain (Rectangles).
+2. Relationships: It shows how classes are related together which can be associations, aggregations, compositions, or generalizations (arrows).
+3. Multiplicity: It shows how one instance of one class that can related to one instance of another class.
+4. Attributes: It describes the value that an instance of a class can have and these attributes are associated with their type.
