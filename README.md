@@ -147,6 +147,22 @@ Relationships:
 3. Customer-Users (One to One): A customer can be related to a user in the system.
 4. Customer-ReturnedProducrs(One to many); A customer can return many products.
 5. Customer-Order (One to Many): a customer can make many orders within the system.
-6. Order-Cashier: (Many to One): Many orders can be checkedout by the same cashier.
-7. Order-Cart (One to One): Each order contains one cart that include all of the products involved.
-8. Order-Product (One to Many): An order can contain one or more products.
+6. Customer-Feedback (one to many): A customer can provide more than one feedback
+7. Order-Cashier: (Many to One): Many orders can be checkedout by the same cashier.
+8. Order-Cart (One to One): Each order contains one cart that include all of the products involved.
+9. Order-Product (One to Many): An order can contain one or more products.
+10. Product-Inventory (Many to One): Many products are stored in one inventory of the store.
+11. Feedback-Store Manager (Many to One): Feedback can be accessed and viewed by the mamanger to perform actions.
+12. Receipt-Cashier (Many to One): Many receipts will be provided to the system.
+13.  Receipt-Transaction (One to One): Each receipt must be associated with one transaction
+14.  Cashier-Transaction (One to many): A cashier can process more than one transaction.
+15.  Inventory-Store Manager (One to One): One main inventory of the store can be managed by the store manager.
+16.  Inventory-SupplierOrder (One to Many): The products in the inventory will be used to place an order for the supplier.
+17.  Users-Memeber (One to One): The users can belong to a member.
+18.  Users-Customer (One to One): The users are customers in the system
+19.  Users-Store Manager (One to One): A user can be a store manager.
+20.  Users-Supplier (One to One): A user may be one of the suppliers
+21.  Return Products-Customer (Many to One): a customer can return many products
+22.  Store Manager-Feedback(One to Many): A store manager can access many feedback provided by the customers
+23.  Store Manager-Report(One to Many): A store manager can generate many reports and view them.
+24.  Store Manager-Restock Products (One to Many): A store manager can request many restock orders for the products 
