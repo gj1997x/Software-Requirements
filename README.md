@@ -116,3 +116,37 @@ Elements in Conceptual Class DIagram:
 2. Relationships: It shows how classes are related together which can be associations, aggregations, compositions, or generalizations (arrows).
 3. Multiplicity: It shows how one instance of one class that can related to one instance of another class.
 4. Attributes: It describes the value that an instance of a class can have and these attributes are associated with their type.
+
+In the screenchot below is the conceptual class diagram of the Electronic Store 111 system: 
+
+<img width="602" alt="Conceptual Class Diagram" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/68486953-50b1-4757-8ae6-0ea017b0d4a6">
+
+
+Classes:
+1. Member: The customers who signup in store or online.
+2. Customer: Online customers or instore customers.
+3. Order: Contains data about the order.
+4. Cart: Its the basket that contains the selected product.
+5. Product: Items that are available for sale.
+6. Feedback: Comments or rating from the customers depending on their expercience.
+7. Receipt: It holdes a full description about the purchase including the payment.
+8. Cashier: Employee that is reponsible for the checkout process.
+9. Inventory: A collection of products within the stock of the store.
+10. Users: These are individuals encompassing roles such as customers, cashiers, store managers, and suppliers, each with distinct access and permissions.
+11. Transaction: A recorded event representing the exchange the store goods for money.
+12. SupplierOrder: A record of the products needed from the supplier.
+13. StoreManager:Person who is responsible of overseeing the store operations, including inventory and reports.
+14. Supplier: The person who is responsible for supplying the store.
+15. ReturnedProducts: A collection of the goods that were returned by the customers.
+16. Report: A document that is represents the information and data about the store.
+17. RestockProducts: A collection of the products that are needed to be supplied.
+
+Relationships:
+1. Member-Customer (One to One ): A member should be a customer.
+2. Member-Users (One to One): A member must be also one of the users.
+3. Customer-Users (One to One): A customer can be related to a user in the system.
+4. Customer-ReturnedProducrs(One to many); A customer can return many products.
+5. Customer-Order (One to Many): a customer can make many orders within the system.
+6. Order-Cashier: (Many to One): Many orders can be checkedout by the same cashier.
+7. Order-Cart (One to One): Each order contains one cart that include all of the products involved.
+8. Order-Product (One to Many): An order can contain one or more products.
