@@ -84,3 +84,26 @@ Supplier:
 The purpose of usecase diagrams is to shows a highlevel overview of the usecases, actors and their interactions within the system. In the image above it can be clearly seen that the actors within the system are Customer/LoyaltyMember which can be guest or member, Cashier, Store Manager, Supplier and all of these actors belong to User. Each actor has a specific functions that can perform depending on their role in the system. There are in total 22 usescases in the system which each usecase provide a function in the Electronic store 111 system. Each actor is associated with a specific usecase that represents the functions that can be done on the systems. The Customer/LoyaltyMember is associated with signup, browseProducts, checkOut, paymentValidation, returnProduct, reviewCart, modifyCart, membershipStatus and giveFeedback. The Cashier is associated with scanProducts, processCheckout, processPayment, processReturn and printReceipt. The Store Manager can viewReports, manageInventory and accessFeedback. The Supplier can interact with the system by proccessOrders, viewNewOrders. Lastly, is the User which consist of all of the actors within the system such that their main interaction within the system is the systemLogin.
 
 #### System Sequence Diagram:
+
+##### Description: 
+
+The sequence diagram is used to visualize the interactions between different actors in a system which include (Customer/Loyalty Member,Cashier, Store Manager and Supplier). This captures the interactions representing their order within the system. Sequence diagrams also clarify the requirements such that it can be as a tool of communication between the stalk holder and the developer. This result of having a clear understanding of how different parts of the system should interact. Furthermore, during the development the sequence diagram can be considered as a reference for the developer which ensures that these interactions are coded correctly. Finally, one of the main purpose of having sequence diagram is that it can be part of the systems documentation that can serve as a reference for future improvements on the system. In the screenshots below are examples of sequence diagrams and which actors are interacting with the system on a specific usecase with an illustrations of the interactions.
+
+| Actors             | Example of the Sequence Diagram Of usecase                                                   |
+| ----------------- | ------------------------------------------------------------------ |
+| Customer/LoyalMember |<img width="467" alt="returnProducts SSD" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/d9c2b7d2-512c-4436-b67a-10b01367b53a">
+|Cashier |<img width="538" alt="scanProducts SSD" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/909467d4-fd3d-463d-9a22-5c6e39434757">
+| Store Manager |<img width="542" alt="manageInventory SSD" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/64dfc7aa-16e2-49fc-9a4e-83c111846ad0">
+| Supplier |<img width="391" alt="ProcessOrders SSD" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/5e8a966c-3565-4b0e-8154-a493e6625884">
+
+
+##### 1. Customer/LoyalMember - Return Product: 
+On this specific sequence diagram there are four main operations that are involved. The first operation getTransaction which will take an input from the user which is the transactionID that user had when first he/she bought the product. The second operation is productID which will take the productID from the user that they want to return. The third operation is getReason which will take the reson of return from the user. The las operation saveReturn eill take as input the customerID from the system and the three parameters taken from the user which will save them in the systems database for further actions.
+
+##### 2. Cashier:
+This sequence diagram is the scanProduct which consists of mainly two operations and they are svanProducts and updateCart. The first operation is the scanProducts such which  will take the barcode number which is the productID and quantity as a parameters. The second operation is updateCart, and it will take the productID, productName, quantity, price, and cartID as an input. It will countinously update the specific current cart depending on the cartID and will make calculations on the stock due to the quantity specified. Finally, it will also calculate the new price of the current cart as soon as the product get scanned.
+
+##### 3. Store Manager:
+
+
+##### 4. Supplier:
