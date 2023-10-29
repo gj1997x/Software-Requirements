@@ -255,143 +255,7 @@ As a Supplier, I want to view new orders placed by electronics store, so that I 
 	Alternative Flow {
 	}
 }
-// System Requirements.
-As a System, I want to add new customers to membership list, so that I can have membership customers list and make operations on those lists
-{
-	Basic Flow {
-		(User) 1. The cashier in store or user on website shall navigate to creating new member account.
-		(System) 2. The System shall take as input customer details .
-		(User) 3. The cashier in store or user on website shall input a specific customer details in electronics store system.
-		(System) 4. The system shall save a customers details within current systems member list database for future orders.
-	}
-	Alternative Flow {
-	}
-}
-As a System, I want to support multiple payment methods, so that all transaction can be processed easily
-{
-	Basic Flow {
-		(User) 1. The customer shall selects a product they wish to purchase and proceeds to checkout in store or online.
-    	(System) 2. The system shall displays any total amount due and prompts a customer to choose their preferred payment method or a cashier asks for customers preffered method.
-    	(User) 3. The customer shall selects their desired payment method.
-    	(System) 4. The system shall display any relevant input fields .
-    	(User) 5. The customer or cashier shall enter any necessary payment details.
-    	(System) 6. The system shall validates any provided details and processes most transactions with relevant payment gateway or service.
-    	(System) 7. The system Upon successful validation shall completes any transaction and provides a confirmation message and a digital receipt.
-	}
-	Alternative Flow {
-		A. At any time, Choosing cash as payment method :
-		1. The customer indicates that they wish to pay by cash.
-    	2. The system provides specific total amount due and waits for cashier intervention.
-    	3. The cashier collects a cash and enters any amount received and processes current transaction.
-    	4. The system calculates any change due and provide notification.
-    	5. The cashier hands back any change and completes current transaction.
-    	B. At any time, Payment Failed :
-    	1. The system notifies a customer of any failure and provides a relevant error message .
-    	2. The customer can choose to reenter any payment details or select a different payment method.
-    		//(Loop 1~2 until validation is true or cancel transaction)
-	}
-}
-As a System, I want to support multiple user roles, so that different levels of roles have different access and permissions
-{
-	Basic Flow {
-		(User) 1. The user approaches to electronics store system and shall log in.
-    	(User) 2. The user shall enter their credentials .
-    	(System) 3. The system shall validates any provided credentials against a stored user database.
-    	(System) 4. The system upon successful validation shall identify specific users role .
-    	(System) 5. The system shall directs any user to their role specific dashboard or interface that is tailored to their level of access and permissions.
-	}
-	Alternative Flow {
-		A. At any time,Login failed :
-		 1. The validation of any data are failed.
-		 2. The system provide notifications on failed login attempt.
-    	 3. The user can choose to re enter their credentials or reset their password.
-	}
-}
-As a System, I want to get feedbacks from users, so that feedbacks can be processed and flagged as they need immediate action
-{
-	Basic Flow {
-		(User) 1. The user shall navigates to feedback section or is prompted to provide feedback after a particular interaction or transaction.
-    	(System) 2. The system shall present a feedback form or interface so customers can input their feedback.
-    	(User) 3. The user shall submits any feedback provided.
-    	(System) 4. The system shall capture any feedback and stores it in a database or feedback repository.
-    	(System) 5. The system shall process most feedbacks to identify keywords and sentiments or any predefined triggers that might indicate urgent attention is required.
-    	(System) 6. The system as such triggers are detected shall flag any feedback and a notification is sent to current store manager for immediate action.
-    	(System) 7. The system shall provide confirmation.
-	}
-	Alternative Flow {
-		A. At any time, Feedback incomplete :
-		1. The system detects an incomplete submission and prompts any current user to fill in required information.
-    	2. The user can choose to complete current feedback or exit without submitting.
-    	3. The system as user chooses to exits will discard current feedback.
-	}
-}
-As a System, I want to update electronics store inventory, so that any newly products from any supplier can be added
-{
-	Basic Flow {
-		(User) 1. The supplier shall input details of any new products to be added to electronics shop inventory.
-    	(System) 2. The system shall validate any product details for accuracy and completeness.
-    	(System) 3. The system shall update an inventory database by adding any new products and adjusting their quantities.
-    	(System) 4. The system shall log an inventory update activity and capturing details such as date and time.
-    	(System) 5. The system shall confirm a successful inventory update to any supplier and optionally sends notifications to relevant stakeholders such as Store Manager.
-	}
-	Alternative Flow {
-		A. At any time, Inventory update Failed :
-		1. The system detects an error and informs current supplier about this issue.
-    	2. The supplier can try again by reentring again.
-    	3. The supplier as error persists is advised to try again later or contact system support for assistance.
-	}
-}
-As a System, I want to create and edit customers cart , so that any scanned products or products selected online can be added to their cart
-{
-	Basic Flow {
-		(User) 1. The user shall scan a product or selects a product online for purchase.
-    	(System) 2. The system shall check items availability and details from inventory database.
-    	(System) 3. The system as a product is available shall create a new cart or edits an existing cart to include a selected product.
-    	(System) 4. The system shall update product quantity and total price in current cart based on any selected product.
-    	(User) 5. The system shall keep updating current cart accordingly as more products are scanned or selected.
-    	(System) 6. The system as a user is done with product selection shall display final cart summary which includes total items and total price and other necessary information.
-    		//(Loop 1~5 until checkout/no scanning or selection)
-	}
-	Alternative Flow {
-		A. At any time,Product Not Available :
-		1. The system checks electronics store inventory and identifies any unavailability.
-    	2. The system informs a user of any product that is out of stock or unavailable.
-    	3. The user can continue to scan or select other products.
-		B. At any time, Removing Products :
-		1. The user selects any product they wish to remove or decreases its quantity to zero.
-    	2. The system updates their cart by removing unwanted products or adjusting its quantity and recalculates its total price.
-    	3. The system confirms a product removal to any current user and displays an updated cart summary.
-	}
-}
-As a System, I want to track stock level of any product , so that electronics stores system can alert as there is a stock level is low
-{
-	Basic Flow {
-		(System) 1. The system periodically or upon specific triggers shall check any stock level of each product in inventory against predefined threshold values.
-    	(System) 2. The system shall flags any products with stock level found below predefined threshold.
-    	(System) 3. The system shall generates an alert or notification indicating which products are at a low stock level.
-    	(User) 4. The system shall sends alert or notification to store manager about any low stock level.
-    	(User) 5. The store manager shall decide to order more products or take any other appropriate action based on a specific alert.
-	}
-	Alternative Flow {
-		A. At any time, Stock level below a specific citical quantity :
-		1. The system identifies that there is a critically low stock.
-    	2. The system generates urgent alert that indicates an immediate action might be required and sent to store manager.
-    	3. The store manager have decide to assign a staff member for reordering low quantity products.
-	}
-}
-As a System, I want to perform actions on sales and inventory, so that reports on sales and inventory could be generated for store manager
-{
-	Basic Flow {
-		(User) 1. The store manager shall request a specific needed report type.
-		(System) 2. The system upon request shall retrieves sales and inventory data from electronics store database.
-    	(System) 3. The system shall process specific data to calculate key metrics such as total sales and sales by product.
-    	(System) 4. The system shall format these metrics into a readable report format which could include charts and graphs.
-    	(System) 5. The system shall generate and make reports available to a store manager.
-    	(User) 6. The store manager shall review any generated reports to understand sales trends and inventory status and to make informed business decisions.
-	}
-	Alternative Flow {
-	}
-}
+
 
 User Requirements:
 {
@@ -403,7 +267,7 @@ User Requirements:
 	5.	Review items in the cart and have the option to remove or them.
 	6.	The user can provide feedbacks for the electronics store.
 	7.	The user can check the status of their membership and see relevant information on their member account.
-	
+
 	Cashier:
 	8.	Handle multiple payment methods.
 	9.	Use a Point Of Sale (POS) system for handling purchases.
@@ -446,8 +310,8 @@ Non-functional requirements:
 	4. The system should encrypt sensitive customer data in the database. 
 	5. The system should be scalable to handle growth in products, customers, and transactions. 
 	6. The system system should be easily deployable with low downtimes during updates or changes. 
-	8. The system shall ensure that all transactions made are accurate and there will be no data corruption. 
-	9. The system shall integrate with other systems such as the shipping or logistic systems. 
-	10. The system shall be capable of recovering from any system failure. 
+	7. The system shall ensure that all transactions made are accurate and there will be no data corruption. 
+	8. The system shall integrate with other systems such as the shipping or logistic systems. 
+	9. The system shall be capable of recovering from any system failure. 
 }
 

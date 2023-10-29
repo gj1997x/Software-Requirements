@@ -756,7 +756,7 @@ UseCaseModel ElectronicsStore111 {
 
 		[Operation]
 		scanProducts(barcode, quantity)
-		updateCart(productID, productName, quantity, price)
+		updateCart(productID, productName, quantity, price, cartID)
 
 	}
 
@@ -1040,16 +1040,15 @@ UseCaseModel ElectronicsStore111 {
 
 	Contract BrowseProductsService::viewAllProducts() : Set(Product) {
 
-		definition:
-			allproducts:Set(Product) = Product.allInstance()
-
+		// definition:
+		// allproducts:Set(Product) = Product.allInstance()
 		precondition:
 			true
 		postcondition:
-			result = allproducts
+			result = Product.allInstance()
 	}
 
-	Contract CheckOutService::cartSummary(listOfProductID : String, quantity : String, orderID : String) : Set(Cart) { // /////////////////////////
+	Contract CheckOutService::cartSummary(listOfProductID : String, quantity : String, orderID : String) : Cart { // /////////////////////////
 
 		definition:
 			c:Cart = Cart.allInstance()->any(c:Cart | c.OrderID = orderID)
@@ -1070,8 +1069,7 @@ UseCaseModel ElectronicsStore111 {
 		precondition:
 			paymentMethod <> '' and
 			orderID <> '' and
-			transactionID <> '' and
-			Amount <> ''
+			transactionID <> ''
 		postcondition:
 			let t:Transaction in
 			t.oclIsNew() and
@@ -1084,7 +1082,7 @@ UseCaseModel ElectronicsStore111 {
 	}
 
 	// ///////////////////////////////////////////////////////////////////////////////////
-	Contract CheckOutService::getGuestUserDetails(fullName : String, address : String, phoneNumber : String, email : String, customerID : String, orderID :String) : Boolean { // //////////////////////////
+	Contract CheckOutService::getGuestUserDetails(fullName : String, address : String, phoneNumber : Integer, email : String, customerID : String, orderID :String) : Boolean { // //////////////////////////
 
 		definition:
 			u:Users = Users.allInstance()
@@ -1093,8 +1091,7 @@ UseCaseModel ElectronicsStore111 {
 			fullName <> '' and
 			address <> '' and
 			phoneNumber <> '' and
-			email <> '' and
-			userID <> ''
+			email <> ''
 		postcondition:
 			let c:Customer in
 			c.oclIsNew() and
@@ -1146,7 +1143,7 @@ UseCaseModel ElectronicsStore111 {
 			self.Reason = reasonOfReturn
 	}
 
-	Contract ReturnProductService::saveReturn(customerID : String, transactionID : String, reasonOfReturn : String, returnID) : Boolean {
+	Contract ReturnProductService::saveReturn(customerID : String, transactionID : String, reasonOfReturn : String, returnID : String) : Boolean {
 
 		definition:
 			r:ReturnedProducts = ReturnedProducts.allInstance()->any(r:ReturnedProducts | r.ProductID = self.ProductID),
@@ -1275,7 +1272,7 @@ UseCaseModel ElectronicsStore111 {
 			endif
 	}
 
-	Contract ScanProductsService::updateCart(productID : String, productName : String, quantity : Integer, price : Real) : Boolean {
+	Contract ScanProductsService::updateCart(productID : String, productName : String, quantity : Integer, price : Real, cartID :String) : Boolean {
 
 		definition:
 			selectedProduct:Product = Product.allInstance()->any(p:Product | p.ProductID = productID and p.ProductName = productName)
@@ -1305,9 +1302,7 @@ UseCaseModel ElectronicsStore111 {
 
 		precondition:
 			paymentMethod <> '' and
-			totalAmount <> '' and
-			loyaltyCustomerID <> '' and
-			Amount <> ''
+			totalAmount <> ''
 		postcondition:
 			let t:Transaction in
 			t.oclIsNew() and
@@ -1465,10 +1460,11 @@ UseCaseModel ElectronicsStore111 {
 	Contract ViewReportsService::generateReport(type : String, startDate : Date, endDate : Date, reportID : String) : Boolean {
 
 		precondition:
-			amount <> '' and
-			cartID <> '' and
-			cashByUser <> '' and
-			validReportTypes = Set{'sales'.. 'inventory'}
+			type <> '' and
+			startDate <> '' and
+			endDate <> '' and
+			validReportTypes = Set{'sales'.. 'inventory'} and
+			endDate <> ''
 		postcondition:
 			let report:Report in
 			report.oclIsNew() and
@@ -1564,7 +1560,7 @@ UseCaseModel ElectronicsStore111 {
 			result = true
 	}
 
-	Contract CheckOutService::newOrder(orderID : String, dateOfPurchase : String, totalPrice : Real, produceList : Set(Product)) : Boolean {
+	Contract CheckOutService::newOrder(orderID : String, dateOfPurchase : Date, totalPrice : Real, produceList : Set(Product)) : Boolean {
 
 		precondition:
 			true
@@ -1596,6 +1592,14 @@ UseCaseModel ElectronicsStore111 {
 			result = true
 	}
 
+	Contract AccessFeedbackService::viewAllFeedback() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
 }
 
 DomainModel Electronics {
@@ -1609,11 +1613,11 @@ DomainModel Electronics {
 
 		[Refer]
 		Becomes : Member Association
-		Make : Order Association
+		Make : Order* Association
 		Are : Users ! Association
-		Suggest : Feedback ! Association
+		Suggest : Feedback* ! Association
 		ReturnedBy : ReturnedProducts ! Association
-		CanBeProcessedBy : Transaction Association
+		CanBeProcessedBy : Transaction* Association
 	}
 
 	Entity Member {
@@ -1634,7 +1638,7 @@ DomainModel Electronics {
 		Branch : String
 
 		[Refer]
-		Process : Order* Association
+		CheckedOutBy : Order* Association
 		Process : Transaction* Association
 		Provides : Receipt* ! Association
 		RepresentedBy : Users ! Association
@@ -1650,7 +1654,7 @@ DomainModel Electronics {
 		Accessed : Feedback* ! Association
 		Is : Users ! Association
 		GeneratedBy : Report* ! Association
-	DoneBy : RestockProducts ! Association
+		DoneBy : RestockProducts * ! Association
 	}
 
 	Entity Product {
@@ -1691,9 +1695,9 @@ DomainModel Electronics {
 		ProductsList : Set(Product)
 
 		[Refer]
-		MadeBY : Customer ! Association
+		MadeBY : Customer Association
 		Accomedate : Product* Association
-		ProcessedBy : Cashier! Association
+		CheckOut : Cashier! Association
 		HasIn : Cart Association
 	}
 
@@ -1716,7 +1720,7 @@ DomainModel Electronics {
 
 		[Refer]
 		Accesses : StoreManager Association
-		Provide : Customer* Aggregation
+		Provide : Customer Association
 	}
 
 	Entity Receipt {
@@ -1725,6 +1729,7 @@ DomainModel Electronics {
 		TotalPrice : Real
 		ProductList : Cart
 		DateOfPurchase : Date
+		TransactionID : String
 
 		[Refer]
 		ProvidedBy : Cashier Association
@@ -1740,6 +1745,7 @@ DomainModel Electronics {
 		[Refer]
 		Fulfill : Supplier ! Association
 		Supplies : Inventory Association
+		Includes : RestockProducts* ! Association
 	}
 
 	Entity Users {
@@ -1794,6 +1800,7 @@ DomainModel Electronics {
 
 		[Refer]
 		AskTo : StoreManager Association
+		FoundIn : SupplierOrder* Association
 	}
 
 }
