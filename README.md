@@ -201,7 +201,7 @@ The Object Constraint Language (OCL) serves an extension to UML that allows for 
 
 | Name Of function in the prototype             | Example of the prototype                                                   |
 | ----------------- | ------------------------------------------------------------------ |
-| Updating Loyalty Points |<img width="580" alt="OCL - LoatltyPoints" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/d0c9e081-d9b1-4da5-9c24-661b2195c424">
-| Membership Status |<img width="490" alt="OCL - MembershipStatus" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/2a5d476f-426d-490a-a88a-413b36456917">
-| Scan Product |<img width="550" alt="OCL - ScanProduct" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/f21f238b-24a4-4d47-8f47-f3405bf6aaa1">
-| Save Feedback |<img width="578" alt="OCL - SavefFeedback" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/761c7353-1dfa-4524-b758-5533693184d6">
+| Updating Loyalty Points |<img width="827" alt="Prototype - LoatltyPoints" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/8b87f1ca-4c75-4aa5-a496-f45c8c46e52e">
+| Membership Status |<img width="689" alt="Prototype - MembershipStatus" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/90cb70cd-ebde-447d-a60b-b48cc4817002">
+| Scan Product |<img width="892" alt="Prototype - ScanProduct" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/0d5e7c73-ea0a-4a18-8a52-0ad354adfe33">
+| Save Feedback |<img width="836" alt="Prototype - SavefFeedback" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/bf55b678-3dc5-4d24-81ae-bf803e2ed7ad">
