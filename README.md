@@ -1,4 +1,4 @@
-### By: Ghanim Alsuwaidi    
+### By: Ghanim Alsuwaidi (厄尼姆)   
 ### Student ID: LS2321206
 #
 # Electronic Store 111
