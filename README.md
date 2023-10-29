@@ -191,7 +191,17 @@ Relationships:
 
 The Object Constraint Language (OCL) serves an extension to UML that allows for more precise rules and conditions for UML models. It lets us set clear constraints on system attributes and relationships.  One of its cardinal roles is to allow for the clear definition of constraints, ensuring conditions within a system remain consistently true, particularly in relation to attributes or relationships of classes. OCL provides a robust mechanism to perform queries on UML models, extracting specific data or subsets as needed. OCL also outlines both what needs to happen before an operation starts (preconditions) and the expected results after it ends (postconditions). IN the screenshot above shows some of the OCL contracts of the Electronic Store 111 system.
 
-1. Updating Loyalty Points:
-2. Membership Status:
-3. Scan Product:
-4. Save Feedback: 
+1. Updating Loyalty Points: It takes two parameters of points and memberID and fincds the desired member depending on the specific ID. The precondition such that this ID should exists. Finally, for the post condition it will add the points to the current value.  
+2. Membership Status: The pervious contract takes in the memberID in the code and this contract will desplay the data within this instance which matches the customerID. Precondition is that this member should exists and the post condition is showing the instance details.
+3. Scan Product: This contract will take two inputs which are barcode and quantity. the barcode is considered as the productID were it will be used to retrieve the product instance that matches the same productID. The contract will check the current level of the stock and if the condition is satified, it will used a function thats called Updatecart which will update the current cart. The precondition is that the quantity should be greater than zero and the product exists. In the other hand is the post condition which will checks the quantity and update the cart.
+4. Save Feedback: It will take two parameters which are the customerID and the textFeedback. Perviously I took the customer feedback and saved it in a variable with other important data. This contract will create a new object of feedback class and fill in the required data that have been entered by the user. The precondition is that the parameters shouldnt be ampty and the post condition is to create the new object and save data.
+
+
+#### Prototyping and Validation:
+
+| Name Of function in the prototype             | Example of the prototype                                                   |
+| ----------------- | ------------------------------------------------------------------ |
+| Updating Loyalty Points |<img width="580" alt="OCL - LoatltyPoints" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/d0c9e081-d9b1-4da5-9c24-661b2195c424">
+| Membership Status |<img width="490" alt="OCL - MembershipStatus" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/2a5d476f-426d-490a-a88a-413b36456917">
+| Scan Product |<img width="550" alt="OCL - ScanProduct" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/f21f238b-24a4-4d47-8f47-f3405bf6aaa1">
+| Save Feedback |<img width="578" alt="OCL - SavefFeedback" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/761c7353-1dfa-4524-b758-5533693184d6">
