@@ -1,4 +1,4 @@
-
+<img width="1279" alt="Feedbackdetails1" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/9118081d-1070-49c6-9cbd-61210da71e6b">
 # Electronic Store 111
 
 The Electronic Store 111 system is a comprehensive solution designed to streamline and optimize operations of a Electronic store, enhancing both in-store and potential online shopping experiences.
@@ -199,9 +199,48 @@ The Object Constraint Language (OCL) serves an extension to UML that allows for 
 
 #### Prototyping and Validation:
 
+Prototyping and validation are fundamental steps in system development. Prototyping provides an initial, tangible representation of a product, enabling stakeholders to interact with it and offer feedback. On the other hand, validation comes into play later, ensuring that the developed product aligns with its intended requirements and functions as expected. By integrating both prototyping and validation, developers can achieve a harmonious balance between innovation and accuracy. This allows to produce a final reliable product that satisfys the users needs stated.
+
 | Name Of function in the prototype             | Example of the prototype                                                   |
 | ----------------- | ------------------------------------------------------------------ |
 | Updating Loyalty Points |<img width="827" alt="Prototype - LoatltyPoints" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/8b87f1ca-4c75-4aa5-a496-f45c8c46e52e">
 | Membership Status |<img width="689" alt="Prototype - MembershipStatus" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/90cb70cd-ebde-447d-a60b-b48cc4817002">
 | Scan Product |<img width="892" alt="Prototype - ScanProduct" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/0d5e7c73-ea0a-4a18-8a52-0ad354adfe33">
 | Save Feedback |<img width="836" alt="Prototype - SavefFeedback" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/bf55b678-3dc5-4d24-81ae-bf803e2ed7ad">
+
+In the screenshots, it can be clearly seen the generation of the prototype by RM2PT from the requirement model and the OCL Contracts. There were alot of Generation errors from the RM2PT but I was able to edit and enhance the contracts on the generated prototype. I was also able to fix the errors from the generated prototype such that it can work correctly.
+
+Prototype and Validation Results:
+
+1)
+<img width="1279" alt="username" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/98686eed-4a17-4536-b266-c081ef6a9ad6">
+
+<img width="1277" alt="password" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/842812e0-a7a8-487b-b4bf-ac169f3ee010">
+
+<img width="1280" alt="SaveDetails" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/b7d001ad-bf80-48a2-a251-e26628ddab68">
+
+
+Result:
+
+<img width="1280" alt="UserInstances" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/7029e285-6e83-4f14-9351-b2ba1c37c3d0">
+
+<img width="823" alt="MemberInstances" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/11dfae7f-03ed-4176-a1df-5574a7aac140">
+
+In the screenshots above, it can be seen that every user who sign up will be a memebr in the store. Their details will be taken and the screenshots under the results shows that the users informations are saved. There will be two objects created one will be memebers and the other object will be the users that holds the username and password of the memeber.
+
+2)
+
+<img width="1279" alt="Feedbackdetails1" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/91bbe448-b100-474a-8eb9-40f8a4f2d046">
+
+<img width="1280" alt="Feedbackdetails2(SaveDetails)" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/def655ba-0b86-4210-a51a-ff838592ff69">
+
+Result: 
+
+<img width="898" alt="Feedbackdetails3" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/98234f5a-cc2b-4e86-b981-04d86c39f737">
+
+The screenshot above represents the feedback that the user can give to the store. The details of the user will be taken associated with the feedback. A feedback instance will be created and saved with the details provided by the user. In the result, the screenshot shows that the system has successfully saved the users feedback with their customerID.
+
+
+
+
+
