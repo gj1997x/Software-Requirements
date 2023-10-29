@@ -33,16 +33,19 @@ Customer:
 7.	The user can check the status of their membership and see relevant information on their member account.
 
 Cashier:
+
 8.	Handle multiple payment methods.
 9.	Use a Point Of Sale (POS) system for handling purchases.
 10.	Provide receipts for customers summarizing their purchase.
 
 Store Manager:
+
 11.	Effective inventory management tools and functionalities.
 12.	Access and review customer’s feedback.
 13.	View various types of reports related to sales and stock.
 
 Supplier:
+
 14.	Process orders made by the electronics store.
 15.	View new orders placed by the electronics store.
 
@@ -76,6 +79,16 @@ Supplier:
 10. The system shall be capable of recovering from any system failure.
 
 ### Explaination:
+
+#### Userstory :
+
+|             |                                                    |
+| ----------------- | ------------------------------------------------------------------ |
+| <img width="593" alt="Userstory" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/65266ad8-22d9-4c72-89ab-902dc447a113"> |<img width="832" alt="Userstory2" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/978ad02c-aab7-43d4-a253-52710fe359a4">
+
+The user story is natural language description on the of a features or functionalities of the system from the perspective of the user or stakeholder. The main purposes of the userstory are defining the requirements from users perpective such that it captures the users need from the system. Userstory also create a shared language between developers and stakeholders. In addition, userstory are needed to be done in the early stages, allowing for adjustments as more information becomes available. As of testability, userstory provide a clear goal for what needs to be developed and tested, ensuring that the delivered feature meets the user's needs. The userstory states the user or stakeholder that supposed to use this functionality and a description of the expected actions the system must do. It also illustrates the basice flow in detailed steps and what should happen in each step and by whom (User/System). Lastly is the Alternative flow, were it states if errors are triggered and how would the system recover from those errors. In the screenshots below are the userstory of the Electronic Store 111 that represents each actors, description of usecase, the basic flow and the alternative flow.
+
+
 
 #### Usecase Diagram:
 
@@ -165,4 +178,15 @@ Relationships:
 21.  Return Products-Customer (Many to One): a customer can return many products
 22.  Store Manager-Feedback(One to Many): A store manager can access many feedback provided by the customers
 23.  Store Manager-Report(One to Many): A store manager can generate many reports and view them.
-24.  Store Manager-Restock Products (One to Many): A store manager can request many restock orders for the products 
+24.  Store Manager-Restock Products (One to Many): A store manager can request many restock orders for the products
+
+#### OCL Contracts:
+
+| Name Of COntract             | Example of the Contracts                                                   |
+| ----------------- | ------------------------------------------------------------------ |
+| Updating Loyalty Points |<img width="580" alt="OCL - LoatltyPoints" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/d0c9e081-d9b1-4da5-9c24-661b2195c424">
+| Membership Status |<img width="490" alt="OCL - MembershipStatus" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/2a5d476f-426d-490a-a88a-413b36456917">
+| Scan Product |<img width="550" alt="OCL - ScanProduct" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/f21f238b-24a4-4d47-8f47-f3405bf6aaa1">
+| Save Feedback |<img width="578" alt="OCL - SavefFeedback" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/761c7353-1dfa-4524-b758-5533693184d6">
+
+
