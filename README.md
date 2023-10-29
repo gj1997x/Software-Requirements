@@ -1,4 +1,6 @@
-<img width="1279" alt="Feedbackdetails1" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/9118081d-1070-49c6-9cbd-61210da71e6b">
+### By: Ghanim Alsuwaid    
+### Student ID: LS2321206
+#
 # Electronic Store 111
 
 The Electronic Store 111 system is a comprehensive solution designed to streamline and optimize operations of a Electronic store, enhancing both in-store and potential online shopping experiences.
