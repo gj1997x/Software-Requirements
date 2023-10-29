@@ -173,7 +173,7 @@ Relationships:
 14.  Cashier-Transaction (One to many): A cashier can process more than one transaction.
 15.  Inventory-Store Manager (One to One): One main inventory of the store can be managed by the store manager.
 16.  Inventory-SupplierOrder (One to Many): The products in the inventory will be used to place an order for the supplier.
-17.  Users-Memeber (One to One): The users can belong to a member.
+17.  Users-Member (One to One): The users can belong to a member.
 18.  Users-Customer (One to One): The users are customers in the system
 19.  Users-Store Manager (One to One): A user can be a store manager.
 20.  Users-Supplier (One to One): A user may be one of the suppliers
@@ -228,7 +228,7 @@ Result:
 
 <img width="823" alt="MemberInstances" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/11dfae7f-03ed-4176-a1df-5574a7aac140">
 
-In the screenshots above, it can be seen that every user who sign up will be a memebr in the store. Their details will be taken and the screenshots under the results shows that the users informations are saved. There will be two objects created one will be memebers and the other object will be the users that holds the username and password of the memeber.
+In the screenshots above, it can be seen that every user who sign up will be a member in the store. Their details will be taken and the screenshots under the results shows that the users informations are saved. There will be two objects created one will be members and the other object will be the users that holds the username and password of the member.
 
 2)
 
