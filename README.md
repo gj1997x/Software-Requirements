@@ -244,8 +244,31 @@ The screenshot above represents the feedback that the user can give to the store
 
 #### Architecture Design:
 
+Architecture design it is one of the major tasks such that it outlines the configuration of the structural elements, interfaces and the relationships to form a coherent and efficient system. One of the main purpose to have an architecture design is to create a robust framework that ensures the system is scalable, maintainable and satisfies all of the main requirements.It also provides a clear communication between the stakeholders and developers. Lastly, one if the design objectives is to align the functionality with the goals specified such that the system can integrate in controlled manner with any new requirements being emerged. In the figure below is the architecture design generation of my target which is Electronic Store 111 done by RM2PT.
+
+##### Architecture Design - Conceptual Class Diagram:
+<img width="785" alt="Screenshot 2023-11-09 224934" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/b7b25413-97cd-4f0c-8e32-8e1ca33e005c">
+
+##### Architecture Design - Use Case Diagram:
+
+<img width="517" alt="Task 1-1(Req diagram)" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/cb5f3961-0f8d-4389-bbd0-d517108bd6de">
+
+##### Architecture Design - Microservice Model:
+
+| <img width="1165" alt="Task 1 (Req diagram1)" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/1794163b-a2c2-4850-a353-1cf0d3098c28">             | <img width="796" alt="Task 1 (Req diagram3)" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/f2a9d665-2537-474d-a2e0-1bf98cb0219b">                                                   |
+| ----------------- | ------------------------------------------------------------------ |
+|<img width="1165" alt="Task 1-1(Req diagram2)" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/fb14d69d-3f11-451e-9587-9577192e10e8"> |<img width="431" alt="Task 1 (Req diagram4)" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/82325cc0-1310-4932-8ab0-a33bafef1c96">
 
 #### Object Oriented Detailed Design:
 
+In this phase the architecture design is translated into an implemntable code structure. It involves in focusing on defining the detailed working of each component. The main purpose of this design is to implement the idea of encapsulation, inheritance, and polymorphism to create modular and reuseable code. In the figures below are the object oriented detailed design that consists of the sequence diagrams and the class diagrams.
 
+##### Object Oriented Detailed Design - Conceptual Class Diagram:
 
+<img width="973" alt="Task 2 Class diagram" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/db492549-81b3-452d-9d8b-a12b7467ceb5">
+
+##### Object Oriented Detailed Design - Sequence Diagram:
+
+|<img width="547" alt="Task 2 Sequence Diagram 1" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/adaf0f5c-bc30-459b-bba7-c142a895c57b">             | <img width="914" alt="Task 2 Sequence Diagram 2" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/2b03c912-4881-47d8-8f5a-e3ac76091e40">                                                   |
+| ----------------- | ------------------------------------------------------------------ |
+|<img width="812" alt="Task 2 Sequence Diagram 3" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/20d819d3-6d4e-46e7-b699-7b204c37b95a">|<img width="803" alt="Task 2 Sequence Diagram 4" src="https://github.com/gj1997x/Software-Requirements/assets/148683770/026e8edb-8aaf-4e17-991a-5d951f376490">
