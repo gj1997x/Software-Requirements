@@ -1,0 +1,393 @@
+MicroServiceModel ElectronicsStore111 {
+	MicroService SupplierService {
+		ProvidedInterface processOrders{
+			[Operation]
+			processOrders
+		}
+		ProvidedInterface viewNewOrders{
+			[Operation]
+			viewNewOrders
+		}
+		ProvidedInterface manageSupplierOrder{
+			[Operation]
+			createSupplierOrder
+			querySupplierOrder
+			updateSupplierOrder
+			modifySupplierOrder
+		}
+		ProvidedInterface manageSupplier{
+			[Operation]
+			createSupplier
+			querySupplier
+			updateSupplier
+			modifySupplier
+		}
+		RequiredInterface manageUsers
+		RequiredInterface manageInventory
+		RequiredInterface manageRestockProducts
+		DomainModel SupplierService {
+			 Entity Supplier {
+				SupplierID : String
+				CompanyName : String
+				ContactDetails : String
+				[Refer]
+				FulfilledBy : SupplierOrder  Association
+			}
+			 Entity SupplierOrder {
+				SupplierOrderID : String
+				SupplierID : String
+				ProductsList : Set<Product>
+				Status : String
+				[Refer]
+				Fulfill : Supplier  Association
+			}
+		}
+	}
+	MicroService StoreManagerService {
+		ProvidedInterface manageInventory{
+			[Operation]
+			createInventory
+			queryInventory
+			updateInventory
+			modifyInventory
+		}
+		ProvidedInterface accessFeedback{
+			[Operation]
+			accessFeedback
+		}
+		ProvidedInterface viewReports{
+			[Operation]
+			viewReports
+		}
+		ProvidedInterface manageReturnedProducts{
+			[Operation]
+			createReturnedProducts
+			queryReturnedProducts
+			updateReturnedProducts
+			modifyReturnedProducts
+		}
+		ProvidedInterface manageStoreManager{
+			[Operation]
+			createStoreManager
+			queryStoreManager
+			updateStoreManager
+			modifyStoreManager
+		}
+		ProvidedInterface manageRestockProducts{
+			[Operation]
+			createRestockProducts
+			queryRestockProducts
+			updateRestockProducts
+			modifyRestockProducts
+		}
+		RequiredInterface manageCustomer
+		RequiredInterface manageProduct
+		RequiredInterface manageSupplierOrder
+		RequiredInterface manageFeedback
+		RequiredInterface manageUsers
+		DomainModel StoreManagerService {
+			 Entity ReturnedProducts {
+				ReturnID : String
+				CustomerID : String
+				ReasonOfReturn : String
+				TransactionID : String
+				[Refer]
+			}
+			 Entity Inventory {
+				InventoryID : String
+				ProductList : Set<Product>
+				[Refer]
+				ManangedBy : StoreManager  Association
+			}
+			 Entity Report {
+				ReportID : String
+				DateGenerated : Date
+				ReportResult : String
+				TypeOfReport : String
+				[Refer]
+				Generates : StoreManager  Association
+			}
+			 Entity RestockProducts {
+				ProductsNeededList : Set<Product>
+				RestockProductsID : String
+				[Refer]
+				AskTo : StoreManager  Association
+			}
+			 Entity StoreManager {
+				StoreManagerID : String
+				FullName : String
+				Branch : String
+				[Refer]
+				Manages : Inventory  Association
+				GeneratedBy : Report  Association
+				DoneBy : RestockProducts  Association
+			}
+		}
+	}
+	MicroService UserService {
+		ProvidedInterface systemLogin{
+			[Operation]
+			systemLogin
+		}
+		ProvidedInterface manageUsers{
+			[Operation]
+			createUsers
+			queryUsers
+			updateUsers
+			modifyUsers
+		}
+		RequiredInterface manageStoreManager
+		RequiredInterface manageSupplier
+		RequiredInterface manageCashier
+		RequiredInterface manageCustomer
+		RequiredInterface manageMember
+		DomainModel UserService {
+			 Entity Users {
+				UserID : String
+				UserName : String
+				Password : String
+				[Refer]
+			}
+		}
+	}
+	MicroService CashierService {
+		ProvidedInterface scanProducts{
+			[Operation]
+			scanProducts
+			CallChain scanProducts {
+				service CustomerOrLoyaltyMemberService : CustomerOrLoyaltyMemberService {
+					Message 1 {
+						operation manageProduct
+					}
+				}
+			}
+		}
+		ProvidedInterface processCheckout{
+			[Operation]
+			processCheckout
+		}
+		ProvidedInterface printReceipt{
+			[Operation]
+			printReceipt
+		}
+		ProvidedInterface processReturn{
+			[Operation]
+			processReturn
+		}
+		ProvidedInterface processPayment{
+			[Operation]
+			processPayment
+		}
+		ProvidedInterface manageCashier{
+			[Operation]
+			createCashier
+			queryCashier
+			updateCashier
+			modifyCashier
+		}
+		ProvidedInterface manageCart{
+			[Operation]
+			createCart
+			queryCart
+			updateCart
+			modifyCart
+		}
+		ProvidedInterface manageTransaction{
+			[Operation]
+			createTransaction
+			queryTransaction
+			updateTransaction
+			modifyTransaction
+		}
+		RequiredInterface manageOrder
+		RequiredInterface manageUsers
+		RequiredInterface manageCustomer
+		RequiredInterface manageProduct
+		DomainModel CashierService {
+			 Entity Cart {
+				CartID : String
+				ProductList : Set<Product>
+				TotalAmount : Real
+				CustomerID : String
+				OrderID : String
+				[Refer]
+			}
+			 Entity Cashier {
+				CashierID : String
+				FullName : String
+				EmployeeNumber : Integer
+				Branch : String
+				[Refer]
+				Process : Transaction  Association
+				Provides : Receipt  Association
+			}
+			 Entity Receipt {
+				ReceiptID : String
+				PaymentMethod : String
+				TotalPrice : Real
+				ProductList : Cart
+				DateOfPurchase : Date
+				TransactionID : String
+				[Refer]
+				ProvidedBy : Cashier  Association
+				MustHave : Transaction  Association
+			}
+			 Entity Transaction {
+				TransactionID : String
+				Amount : Real
+				PaymentMethod : String
+				OrderID : String
+				[Refer]
+				ProcessedBy : Cashier  Association
+				ProvidedWithin : Receipt  Association
+			}
+		}
+	}
+	MicroService CustomerOrLoyaltyMemberService {
+		ProvidedInterface paymentValidation{
+			[Operation]
+			paymentValidation
+		}
+		ProvidedInterface giveFeedback{
+			[Operation]
+			giveFeedback
+		}
+		ProvidedInterface reviewCart{
+			[Operation]
+			reviewCart
+			CallChain reviewCart {
+				service CashierService : CashierService {
+					Message 1 {
+						operation manageCart
+					}
+				}
+			}
+		}
+		ProvidedInterface membershipStatus{
+			[Operation]
+			membershipStatus
+		}
+		ProvidedInterface signup{
+			[Operation]
+			signup
+		}
+		ProvidedInterface inStorePaymentValidation{
+			[Operation]
+			inStorePaymentValidation
+		}
+		ProvidedInterface modifyCart{
+			[Operation]
+			modifyCart
+			CallChain modifyCart {
+				service CashierService : CashierService {
+					Message 1 {
+						operation manageCart
+					}
+				}
+			}
+		}
+		ProvidedInterface browseProducts{
+			[Operation]
+			browseProducts
+		}
+		ProvidedInterface checkOut{
+			[Operation]
+			checkOut
+		}
+		ProvidedInterface returnProduct{
+			[Operation]
+			returnProduct
+		}
+		ProvidedInterface credentialsCheck{
+			[Operation]
+			credentialsCheck
+		}
+		ProvidedInterface manageOrder{
+			[Operation]
+			createOrder
+			queryOrder
+			updateOrder
+			modifyOrder
+		}
+		ProvidedInterface manageCustomer{
+			[Operation]
+			createCustomer
+			queryCustomer
+			updateCustomer
+			modifyCustomer
+		}
+		ProvidedInterface manageProduct{
+			[Operation]
+			createProduct
+			queryProduct
+			updateProduct
+			modifyProduct
+		}
+		ProvidedInterface manageFeedback{
+			[Operation]
+			createFeedback
+			queryFeedback
+			updateFeedback
+			modifyFeedback
+		}
+		ProvidedInterface manageMember{
+			[Operation]
+			createMember
+			queryMember
+			updateMember
+			modifyMember
+		}
+		RequiredInterface manageCashier
+		RequiredInterface manageCart
+		RequiredInterface manageInventory
+		RequiredInterface manageUsers
+		RequiredInterface manageReturnedProducts
+		RequiredInterface manageTransaction
+		RequiredInterface manageStoreManager
+		DomainModel CustomerOrLoyaltyMemberService {
+			 Entity Order {
+				OrderID : String
+				DateOfPurchase : Date
+				TotalPrice : Real
+				ProductsList : Set<Product>
+				[Refer]
+				MadeBY : Customer  Association
+				Accomedate : Product  Association
+			}
+			 Entity Product {
+				ProductID : String
+				ProductName : String
+				Price : Real
+				StockLevel : Integer
+				[Refer]
+				In : Order  Association
+			}
+			 Entity Customer {
+				CustomerID : String
+				FullName : String
+				Address : String
+				PhoneNumber : Integer
+				Email : String
+				[Refer]
+				Becomes : Member  Association
+				Make : Order  Association
+				Suggest : Feedback  Association
+			}
+			 Entity Member {
+				MemberID : String
+				FullName : String
+				Tier : String
+				LoyaltyPoints : Integer
+				[Refer]
+				Is : Customer  Association
+			}
+			 Entity Feedback {
+				FeedbackID : String
+				FeedbackContent : String
+				CustomerID : String
+				[Refer]
+				Provide : Customer  Association
+			}
+		}
+	}
+}
