@@ -242,7 +242,10 @@ Result:
 
 The screenshot above represents the feedback that the user can give to the store. The details of the user will be taken associated with the feedback. A feedback instance will be created and saved with the details provided by the user. In the result, the screenshot shows that the system has successfully saved the users feedback with their customerID.
 
+#### Architecture Design:
 
+
+#### Object Oriented Detailed Design:
 
 
 
