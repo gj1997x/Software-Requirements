@@ -17,7 +17,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/com.rm2pt.req.design/description/classdiagram.odesign#//@ownedViewpoints[name='MicroServiceModel1']/@ownedRepresentations[name='Use%20Case%20Diagram']"/>
         <target xmi:type="req:UseCaseModel" href="electronics%20store.req#//@UseCaseModel"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_QFcpgn1vEe6-_P82kftZIw" name="electronics store" repPath="#_QFcpgH1vEe6-_P82kftZIw" changeId="5888d927-511b-49f7-95e5-d8c1aef59974">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_QFcpgn1vEe6-_P82kftZIw" name="electronics store" repPath="#_QFcpgH1vEe6-_P82kftZIw" changeId="d1d50a7c-2193-49fb-8d6e-02d0a5982e6c">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/com.rm2pt.req.design/description/classdiagram.odesign#//@ownedViewpoints[name='MicroServiceModel1']/@ownedRepresentations[name='Conceptual%20Class%20Diagram']"/>
         <target xmi:type="req:DomainModel" href="electronics%20store.req#//@DomainModel"/>
       </ownedRepresentationDescriptors>
@@ -2241,7 +2241,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/com.rm2pt.req.design/description/classdiagram.odesign#//@ownedViewpoints[name='MicroServiceModel1']/@ownedRepresentations[name='Conceptual%20Class%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Entity']/@subNodeMappings[name='EntityAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_QFmaoX1vEe6-_P82kftZIw" name="ProductsList : com.rm2pt.req.req.impl.CollectionTypeIdentifierCSImpl@c8be44 (name: Set)">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_QFmaoX1vEe6-_P82kftZIw" name="ProductsList : com.rm2pt.req.req.impl.CollectionTypeIdentifierCSImpl@1aa2c921 (name: Set)">
           <target xmi:type="req:Attribute" href="electronics%20store.req#//@DomainModel/@entity.0/@entitys.0/@attributes.3"/>
           <semanticElements xmi:type="req:Attribute" href="electronics%20store.req#//@DomainModel/@entity.0/@entitys.0/@attributes.3"/>
           <ownedStyle xmi:type="diagram:Square" uid="_QFwLgH1vEe6-_P82kftZIw" labelPosition="node">
@@ -2456,7 +2456,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/com.rm2pt.req.design/description/classdiagram.odesign#//@ownedViewpoints[name='MicroServiceModel1']/@ownedRepresentations[name='Conceptual%20Class%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Entity']/@subNodeMappings[name='EntityAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_XUCo033nEe6-_P82kftZIw" name="ProductList : com.rm2pt.req.req.impl.CollectionTypeIdentifierCSImpl@5a5f7d8a (name: Set)">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_XUCo033nEe6-_P82kftZIw" name="ProductList : com.rm2pt.req.req.impl.CollectionTypeIdentifierCSImpl@52076d1d (name: Set)">
           <target xmi:type="req:Attribute" href="electronics%20store.req#//@DomainModel/@entity.1/@entitys.0/@attributes.1"/>
           <semanticElements xmi:type="req:Attribute" href="electronics%20store.req#//@DomainModel/@entity.1/@entitys.0/@attributes.1"/>
           <ownedStyle xmi:type="diagram:Square" uid="_-ctyh4bVEe6mUOnrCFMg7w" labelPosition="node">
@@ -2711,7 +2711,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/com.rm2pt.req.design/description/classdiagram.odesign#//@ownedViewpoints[name='MicroServiceModel1']/@ownedRepresentations[name='Conceptual%20Class%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Entity']/@subNodeMappings[name='EntityAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_anwdcobcEe6OI8hihhhE-A" name="ProductList : com.rm2pt.req.req.impl.CollectionTypeIdentifierCSImpl@508b3a48 (name: Set)">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_anwdcobcEe6OI8hihhhE-A" name="ProductList : com.rm2pt.req.req.impl.CollectionTypeIdentifierCSImpl@30fcd74f (name: Set)">
           <target xmi:type="req:Attribute" href="electronics%20store.req#//@DomainModel/@entity.2/@entitys.1/@attributes.1"/>
           <semanticElements xmi:type="req:Attribute" href="electronics%20store.req#//@DomainModel/@entity.2/@entitys.1/@attributes.1"/>
           <ownedStyle xmi:type="diagram:Square" uid="__ZnmJIbdEe6OI8hihhhE-A" labelPosition="node">
@@ -2775,7 +2775,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/com.rm2pt.req.design/description/classdiagram.odesign#//@ownedViewpoints[name='MicroServiceModel1']/@ownedRepresentations[name='Conceptual%20Class%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Entity']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/com.rm2pt.req.design/description/classdiagram.odesign#//@ownedViewpoints[name='MicroServiceModel1']/@ownedRepresentations[name='Conceptual%20Class%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Entity']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_6Vy8iobcEe6OI8hihhhE-A" name="ProductsNeededList : com.rm2pt.req.req.impl.CollectionTypeIdentifierCSImpl@15e7f7d8 (name: Set)">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_6Vy8iobcEe6OI8hihhhE-A" name="ProductsNeededList : com.rm2pt.req.req.impl.CollectionTypeIdentifierCSImpl@45502ba2 (name: Set)">
           <target xmi:type="req:Attribute" href="electronics%20store.req#//@DomainModel/@entity.2/@entitys.3/@attributes.0"/>
           <semanticElements xmi:type="req:Attribute" href="electronics%20store.req#//@DomainModel/@entity.2/@entitys.3/@attributes.0"/>
           <ownedStyle xmi:type="diagram:Square" uid="_6Vy8i4bcEe6OI8hihhhE-A" labelPosition="node">
@@ -2902,7 +2902,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/com.rm2pt.req.design/description/classdiagram.odesign#//@ownedViewpoints[name='MicroServiceModel1']/@ownedRepresentations[name='Conceptual%20Class%20Diagram']/@defaultLayer/@containerMappings[name='ContextContainer']/@subContainerMappings[name='Entity']/@subNodeMappings[name='EntityAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" uid="_-cvnyIbVEe6mUOnrCFMg7w" name="ProductsList : com.rm2pt.req.req.impl.CollectionTypeIdentifierCSImpl@2ec9a953 (name: Set)">
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_-cvnyIbVEe6mUOnrCFMg7w" name="ProductsList : com.rm2pt.req.req.impl.CollectionTypeIdentifierCSImpl@4b4d64e6 (name: Set)">
           <target xmi:type="req:Attribute" href="electronics%20store.req#//@DomainModel/@entity.3/@entitys.1/@attributes.2"/>
           <semanticElements xmi:type="req:Attribute" href="electronics%20store.req#//@DomainModel/@entity.3/@entitys.1/@attributes.2"/>
           <ownedStyle xmi:type="diagram:Square" uid="__ZnmOIbdEe6OI8hihhhE-A" labelPosition="node">
