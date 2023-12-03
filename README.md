@@ -5,6 +5,9 @@
 
 The Electronic Store 111 system is a comprehensive solution designed to streamline and optimize operations of a Electronic store, enhancing both in-store and potential online shopping experiences.
 
+Prototype File Link: https://1drv.ms/f/c/bf5b1b20b0d920c1/Ek_lico-pyVKhytpKhiu1i0BPh3mAp_IMkFeTnpieyj4gg?e=kNjdIT
+(The link contains the uncompressed file of the prototype)
+
 ### Key Components:
 
 1. Point of Sale (POS) System: Allows cashiers to handle diverse payment methods and process sales efficiently. Generates receipts, detailing purchases for customers.
